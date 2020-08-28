@@ -18,6 +18,7 @@ class TimeStampedModel(models.Model):
 
 class Movie(TimeStampedModel):
     tittle = models.CharField(max_length=255, null=True, default=None)
+    image_url = models.URLField(max_length=200)
     year = models.IntegerField()
     rating = models.FloatField()
     extra_feild = models.TextField()

@@ -11,10 +11,13 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('url', type=str,
-                            help='Indicates the number of users to be created')
+                            help='Indicates the url')
+        # parser.add_argument('--step', type=int,
+        #                     help='Indicates the range while fetching data')
 
     def handle(self, *args, **kwargs):
         url = kwargs['url']
+        # step = kwargs['step']
         r = requests.get(url)
         htmlcont = r.content
         count = 0
@@ -43,8 +46,11 @@ class Command(BaseCommand):
             r2 = requests.get(url2)
             htmlcont2 = r2.content
             soup2 = BeautifulSoup(htmlcont2, 'html.parser')
+            img_data = soup2.find("div", class_="poster")
             data1 = soup2.find_all("div", class_="title_block")
             data2 = soup2.find_all("div", class_="plot_summary")
+            img_url = try_or(
+                lambda: img_data.find("img").get("src"), '')
             for i in data1:
                 context['extra_feild'] = {
                     "release_data": try_or(
@@ -71,7 +77,7 @@ class Command(BaseCommand):
             if movie_obj:
                 already_count += 1
             else:
-                Movie.objects.create(**context)
+                Movie.objects.create(image_url=img_url, **context)
                 count += 1
         print(already_count, "movies data alread in system")
         print(count, "movies data successfully inserted")
