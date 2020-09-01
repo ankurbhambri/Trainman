@@ -27,7 +27,7 @@ class HomePageView(TemplateView):
     def get(self, request, *args, **kwargs):
         context = {
             "movies_data": Movie.objects.all(),
-            "login_user": self.request.user,
+            "login_user": self.request.user if self.request.user.is_authenticated else None,
         }
         return render(request, self.template_name, {"context": context})
 
