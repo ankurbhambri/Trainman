@@ -25,7 +25,7 @@ SECRET_KEY = 'g7h(g04ki1x*sowze4p*vr@uob%g@b52lyp-k-7n6u2)&3qs5o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['fast-caverns-34044.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
