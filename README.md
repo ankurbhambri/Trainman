@@ -20,3 +20,5 @@ ex - ./manage.py scrap https://www.imdb.com/india/top-rated-indian-movies/
 # User Whistlist and Watched movies is maintained
 
 # Authentication and Consistency of data
+
+# Procfile is used to deploy on heroku cloud
