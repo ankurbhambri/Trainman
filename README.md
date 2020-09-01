@@ -22,3 +22,5 @@ ex - ./manage.py scrap https://www.imdb.com/india/top-rated-indian-movies/
 # Authentication and Consistency of data
 
 # Procfile is used to deploy on heroku cloud
+
+ex- https://fast-caverns-34044.herokuapp.com/
