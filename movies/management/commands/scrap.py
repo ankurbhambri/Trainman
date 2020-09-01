@@ -65,7 +65,7 @@ class Command(BaseCommand):
                             class_="credit_summary_item").get_text().split('\n')[-1], ''),
                     "writers": try_or(
                         lambda: i.find_all(
-                            class_="credit_summary_item")[1].get_text().split('\n')[-1], ''),
+                            class_="credit_summary_item")[1].get_text().split('\n')[2], ''),
                     "summary_text": try_or(
                         lambda: i.find(class_="summary_text").get_text().strip(' \n '), '')
                 })

@@ -29,10 +29,10 @@
         <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user" aria-hidden="true"> {{ context.login_user }} </i></a>
+                    <i class="fa fa-user" aria-hidden="true"> {{ context.login_user.username }} </i></a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="">WishList</a>
-                    <a class="dropdown-item" href="">WatchList</a>
+                    <a class="dropdown-item" href="{% url "whistlist" %}">WishList</a>
+                    <a class="dropdown-item" href="{% url "watched" %}">Watched</a>
                     <a class="dropdown-item" href="{% url "logout" %}">Logout</a>
                 </div>
             </li>
@@ -47,5 +47,7 @@
 </nav>
 
 <body>{% block body %}{% endblock %}</body>
+
+<script type="text/javascript">{% block script %}{% endblock %}</script>
 
 </html>

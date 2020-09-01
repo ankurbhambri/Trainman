@@ -1,6 +1,6 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.postgres.fields import JSONField
+from django.contrib.auth.models import User
 
 
 class TimeStampedModel(models.Model):
@@ -21,7 +21,13 @@ class Movie(TimeStampedModel):
     image_url = models.URLField(max_length=200)
     year = models.IntegerField()
     rating = models.FloatField()
-    extra_feild = models.TextField()
+    extra_feild = JSONField()
 
     def __str__(self):
         return self.tittle
+
+
+class UserMovie(TimeStampedModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    watched = models.IntegerField(default=0)
