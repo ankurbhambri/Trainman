@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'trainman.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'trainman',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'da30dbviqj8ti5',
+        'USER': 'muofhhxgyiadkf',
+        'PASSWORD': 'ca8b9898965486fd35ffaa2ca393de4c689a2b6fa5088e398d4baf1575333adb',
+        'HOST': 'ec2-54-166-107-5.compute-1.amazonaws.com',
         'PORT': 5432,
     }
 }
