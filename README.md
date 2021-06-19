@@ -11,7 +11,7 @@
 -> Finally, run your django runserver.<br/>
 == python manage.py runserver<br/>
 
-# Scraping Movies use managment command scrap and parameter link
+# Scraping movies using managment command scrap.py and parameter link
 
 ex- ./manage.py scrap https://www.imdb.com/chart/top/
 or
